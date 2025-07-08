@@ -66,6 +66,8 @@ Follow these instructions to get a copy of the project up and running on your lo
 1.  **Clone the repository:**
     ```bash
     git clone [https://github.com/mrmp2010/Test-Code-Js-Part-II.git](https://github.com/mrmp2010/Test-Code-Js-Part-II.git)
+    # Consider renaming the cloned directory for clarity:
+    mv Test-Code-Js-Part-II JavaScript-Core-Concepts-Examples
     cd JavaScript-Core-Concepts-Examples
     ```
 
@@ -76,15 +78,20 @@ Follow these instructions to get a copy of the project up and running on your lo
         ```bash
         cd "other code-2/babel"
         npm install
-        # To run the babel script defined in package.json:
+        # To run the babel script defined in package.json to transpile:
         npm run babel
+        # This will output a transpiled file to 'build/index.js'
         ```
     * **For Webpack examples:**
         ```bash
         cd "other code-2/webpack"
         npm install
-        # To run webpack (usually configured in package.json scripts):
-        # npm run build  (assuming a build script exists, check package.json)
+        # To run webpack and bundle:
+        # Check 'package.json' for the specific build script, usually 'npm run build'
+        # For this project, you would need to add a build script in webpack/package.json
+        # For example, add: "build": "webpack --config webpack.config.js" to the "scripts" section.
+        # Then run: npm run build
+        # This will output a bundled file (e.g., 'dist/bundle.js') that 'index.html' can then use.
         ```
 
 ### Running Examples
@@ -97,6 +104,9 @@ Most examples can be run by simply opening the corresponding `.html` files in yo
 * **Open `test code 2/index.html`** to explore a wide range of JavaScript concepts from `specs.js`.
 * **Open `other code-2/moduleTest(common js)/index.html`** to see CommonJS module usage.
 * **Open `other code-2/moduleTest(Es6-module)/index.html`** to see ES6 module usage.
-* For Babel and Webpack examples, refer to their respective `package.json` files for scripts to build/run them. The output will typically be in a `build` or `dist` folder, which then can be served via a simple HTTP server or opened in a browser if it's an HTML file.
+* For Babel examples, after running `npm run babel`, you might need to manually open `build/index.html` (if you create one) or inspect the `build/index.js` file.
+* For Webpack examples, after running the build script, open `other code-2/webpack/index.html` which should load the bundled `scriptB.js` (which is likely `dist/bundle.js` after Webpack processes it).
 
 ## Folder Structure
+
+
